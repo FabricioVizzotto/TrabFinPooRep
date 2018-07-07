@@ -1,5 +1,4 @@
-package model;
-
+package control;
 import java.awt.event.ActionListener;
 import vision.JanelaCliente;
 import model.Dados;
