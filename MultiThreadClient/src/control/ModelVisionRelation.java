@@ -1,36 +1,35 @@
-package model;
+package control;
 
+import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import vision.JanelaCliente;
 import model.Dados;
 
-public class ModelVisionRelation implements ActionListener{
+public class ModelVisionRelation {
 
-  JanelaCliente t = new JanelaCliente();
-  Dados d;
+	JanelaCliente j = new JanelaCliente();
+	Dados d;
 
-  public ModelVisionRelation(JanelaCliente j, Dados d){
-    this.j = j;
-    this.d = d;
+	public ModelVisionRelation(JanelaCliente j, Dados d) {
+		this.j = j;
+		this.d = d;
 
-    this.j.getBtnSubmeter().addActionListener(new ActionListener(){
-        public void ActionPerformed(ActionEvent arg0){
-          d = new Dados(this.t.getTxtAltura.getText(), this.t.getTxtPeso.getText());
-          d.imc = fazImc(d);
-        }
-    });
+		this.j.getBtnSubmeter().addActionListener(new ActionListener() {
 
-    this.j.getBtnLimpar().addActionListener(new ActionListener(){
-        public void ActionPerformed(ActionEvent arg0){
-          this.t.getTxtPeso.setText("");
-          this.t.getTxtAltura.setText("");
-          this.t.getLblIMC.setText("");
-        }
-    });
-  }
+			public void actionPerformed(ActionEvent e) {
 
-  public double fazImc(Dados d){
-    imc = d.peso / (Math.pow(2, d.altura));
-    return imc;
-  }
+			}
+		});
+
+		this.j.getBtnLimpar().addActionListener(new ActionListener() {
+
+			public void actionPerformed(ActionEvent e) {
+
+				j.getTxtPeso().setText("");
+				j.getTxtAltura().setText("");
+				j.getLblIMC().setText("");
+			}
+		});
+	}
+
 }
