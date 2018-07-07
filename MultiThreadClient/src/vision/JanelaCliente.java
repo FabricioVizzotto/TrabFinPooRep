@@ -20,7 +20,8 @@ public class JanelaCliente extends JFrame {
 	private JTextField txtAltura;
 	private JTextField txtPeso;
 	private JLabel lblIMC;
-
+	private JButton btnSubmeter;
+	private JButton btnLimpar;
 	/**
 	 * Launch the application.
 	 */
@@ -41,6 +42,7 @@ public class JanelaCliente extends JFrame {
 	 * Create the frame.
 	 */
 	public JanelaCliente() {
+		setTitle("Calculo de IMC");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 338, 219);
 		contentPane = new JPanel();
@@ -71,14 +73,72 @@ public class JanelaCliente extends JFrame {
 		lblIMC.setBounds(10, 73, 294, 96);
 		contentPane.add(lblIMC);
 		
-		JButton btnSubmeter = new JButton("Submeter");
+		btnSubmeter = new JButton("Submeter");
 		btnSubmeter.setIcon(null);
 		btnSubmeter.setBounds(10, 39, 142, 23);
 		contentPane.add(btnSubmeter);
 		
-		JButton btnLimpar = new JButton("Limpar");
+		btnLimpar = new JButton("Limpar");
 		btnLimpar.setIcon(null);
 		btnLimpar.setBounds(162, 39, 142, 23);
 		contentPane.add(btnLimpar);
 	}
+
+	public JLabel getLblAltura() {
+		return lblAltura;
+	}
+
+	public void setLblAltura(JLabel lblAltura) {
+		this.lblAltura = lblAltura;
+	}
+
+	public JLabel getLblPeso() {
+		return lblPeso;
+	}
+
+	public void setLblPeso(JLabel lblPeso) {
+		this.lblPeso = lblPeso;
+	}
+
+	public JTextField getTxtAltura() {
+		return txtAltura;
+	}
+
+	public void setTxtAltura(JTextField txtAltura) {
+		this.txtAltura = txtAltura;
+	}
+
+	public JTextField getTxtPeso() {
+		return txtPeso;
+	}
+
+	public void setTxtPeso(JTextField txtPeso) {
+		this.txtPeso = txtPeso;
+	}
+
+	public JLabel getLblIMC() {
+		return lblIMC;
+	}
+
+	public void setLblIMC(JLabel lblIMC) {
+		this.lblIMC = lblIMC;
+	}
+
+	public JButton getBtnSubmeter() {
+		return btnSubmeter;
+	}
+
+	public void setBtnSubmeter(JButton btnSubmeter) {
+		this.btnSubmeter = btnSubmeter;
+	}
+
+	public JButton getBtnLimpar() {
+		return btnLimpar;
+	}
+
+	public void setBtnLimpar(JButton btnLimpar) {
+		this.btnLimpar = btnLimpar;
+	}
+	
+	
 }
