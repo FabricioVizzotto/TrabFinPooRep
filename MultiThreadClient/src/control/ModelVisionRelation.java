@@ -7,20 +7,21 @@ import model.Dados;
 
 public class ModelVisionRelation {
 
-	JanelaCliente j = new JanelaCliente();
-	Dados d;
+	private JanelaCliente j = new JanelaCliente();
+	private Dados d;
 
 	public ModelVisionRelation(JanelaCliente j, Dados d) {
 		this.j = j;
 		this.d = d;
 
-		this.j.getBtnSubmeter().addActionListener(new ActionListener() {
+		j.getBtnSubmeter().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-
+				d.setAlt(Double.parseDouble(j.getTxtAltura().getText()));
+				d.setPeso(Double.parseDouble(j.getTxtPeso().getText()));
 			}
 		});
 
-		this.j.getBtnLimpar().addActionListener(new ActionListener() {
+		j.getBtnLimpar().addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				j.getTxtPeso().setText("");
 				j.getTxtAltura().setText("");
@@ -28,5 +29,4 @@ public class ModelVisionRelation {
 			}
 		});
 	}
-
 }

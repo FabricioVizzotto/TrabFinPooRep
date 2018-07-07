@@ -24,6 +24,9 @@ public class JanelaCliente extends JFrame {
 	private JLabel lblIMC;
 	private JButton btnSubmeter;
 	private JButton btnLimpar;
+	private JTextField txtIP;
+	private JTextField txtPorta;
+	private JButton btnConnect;
 	/**
 	 * Launch the application.
 	 */
@@ -46,7 +49,7 @@ public class JanelaCliente extends JFrame {
 	public JanelaCliente() {
 		setTitle("Calculo de IMC");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 338, 219);
+		setBounds(100, 100, 338, 301);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -84,6 +87,28 @@ public class JanelaCliente extends JFrame {
 		btnLimpar.setIcon(null);
 		btnLimpar.setBounds(162, 39, 142, 23);
 		contentPane.add(btnLimpar);
+		
+		JLabel lblIP = new JLabel("IP:");
+		lblIP.setBounds(10, 180, 46, 14);
+		contentPane.add(lblIP);
+		
+		JLabel lblPorta = new JLabel("Porta:");
+		lblPorta.setBounds(10, 224, 46, 14);
+		contentPane.add(lblPorta);
+		
+		txtIP = new JTextField();
+		txtIP.setBounds(66, 177, 86, 20);
+		contentPane.add(txtIP);
+		txtIP.setColumns(10);
+		
+		txtPorta = new JTextField();
+		txtPorta.setBounds(66, 221, 86, 20);
+		contentPane.add(txtPorta);
+		txtPorta.setColumns(10);
+		
+		btnConnect = new JButton("Conectar");
+		btnConnect.setBounds(162, 180, 142, 58);
+		contentPane.add(btnConnect);
 	}
 
 	public JLabel getLblAltura() {
@@ -141,6 +166,4 @@ public class JanelaCliente extends JFrame {
 	public void setBtnLimpar(JButton btnLimpar) {
 		this.btnLimpar = btnLimpar;
 	}
-	
-	
 }
