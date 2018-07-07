@@ -30,6 +30,15 @@ public class SocketServidor {
 		}
 	}
 	
+	public void createServerSocket(int porta) {
+		try {
+			serv = new ServerSocket(porta);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	public void createWriter(){
 		try {
 			pw = new PrintWriter(cli.getOutputStream());
