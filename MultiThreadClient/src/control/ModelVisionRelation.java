@@ -15,16 +15,13 @@ public class ModelVisionRelation {
 		this.d = d;
 
 		this.j.getBtnSubmeter().addActionListener(new ActionListener() {
-
 			public void actionPerformed(ActionEvent e) {
 
 			}
 		});
 
 		this.j.getBtnLimpar().addActionListener(new ActionListener() {
-
 			public void actionPerformed(ActionEvent e) {
-
 				j.getTxtPeso().setText("");
 				j.getTxtAltura().setText("");
 				j.getLblIMC().setText("");

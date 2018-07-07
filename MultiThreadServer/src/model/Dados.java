@@ -5,11 +5,8 @@ public class Dados{
   public double peso;
   public double imc;
 
-  public Dados(double alt, double peso, double imc){
+  public Dados(){
     super();
-    this.alt = alt;
-    this.peso = peso;
-    this.imc = imc;
   }
 
   public double getAlt(){
