@@ -55,6 +55,14 @@ public class SocketClient {
 	}
 	public String receiveData(){
 		String dados = null;
+		try {
+			while(br.ready()){
+				dados = br.readLine();
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return dados;
 				
 	}

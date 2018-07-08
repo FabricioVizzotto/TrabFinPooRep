@@ -190,4 +190,6 @@ public class JanelaCliente extends JFrame {
 	public void setBtnConnect(JButton btnConnect) {
 		this.btnConnect = btnConnect;
 	}
+	
+	
 }
