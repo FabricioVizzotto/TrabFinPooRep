@@ -13,14 +13,15 @@ public class Principal {
 		Dados d = new Dados();
 		SocketClient sc = new SocketClient(jc.getTxtIP().getText(), Integer.parseInt(jc.getTxtPorta().getText()));
 		ModelVisionRelation mvr = new ModelVisionRelation(jc, d);
+		jc.setVisible(true);
 
 		sc.bindToServer();
 		sc.createReader();
 		sc.createWriter();
 		
 		// Shipping Bay - Sends to server as a request
-		String exitAltura = jc.getTxtAltura().getText();
-		String exitPeso = jc.getTxtPeso().getText();
+		String exitAltura = String.valueOf(d.getAlt());
+		String exitPeso = String.valueOf(d.getPeso());
 		sc.sendData(exitAltura);
 		sc.sendData(exitPeso);
 		
