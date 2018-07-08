@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class SocketClient {
 
@@ -13,17 +15,20 @@ public class SocketClient {
 	private String endereco;
 	private int porta;
 	private PrintWriter pw;
-	private BufferedReader br;
-	
-	public SocketClient(String endereco, int porta){
+	private BufferedReader in;
+	private ArrayList<String> al;
+
+	public SocketClient(String endereco, int porta) {
 		this.endereco = endereco;
 		this.porta = porta;
-		
+
 	}
-	
-	public void bindToServer(){
+
+	public void bindToServer() {
 		try {
-			cli = new Socket(endereco,porta);
+			cli = new Socket(endereco, porta);
+			createReader();
+			createWriter();
 		} catch (UnknownHostException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -32,38 +37,41 @@ public class SocketClient {
 			e.printStackTrace();
 		}
 	}
-	
-	public void createWriter(){
+
+	public void createWriter() {
 		try {
 			pw = new PrintWriter(cli.getOutputStream());
-			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-	public void sendData(String data){
-		pw.write(data);
+
+	public void sendData(String data) {
+		pw.println(data);
+		pw.flush();
+		System.out.println("info sent");
 	}
-	public void createReader(){
+
+	public void createReader() {
 		try {
-			br = new BufferedReader(new InputStreamReader(cli.getInputStream()));
+			in = new BufferedReader(new InputStreamReader(cli.getInputStream()));
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+
 	}
-	public String receiveData(){
-		String dados = null;
+
+	public String receiveData() {
+		String str = null;
 		try {
-			while(br.ready()){
-				dados = br.readLine();
-			}
+			str = in.readLine();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return dados;
-				
+		return str;
 	}
+
 }
