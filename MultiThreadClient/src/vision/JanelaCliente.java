@@ -166,4 +166,28 @@ public class JanelaCliente extends JFrame {
 	public void setBtnLimpar(JButton btnLimpar) {
 		this.btnLimpar = btnLimpar;
 	}
+
+	public JTextField getTxtIP() {
+		return txtIP;
+	}
+
+	public void setTxtIP(JTextField txtIP) {
+		this.txtIP = txtIP;
+	}
+
+	public JTextField getTxtPorta() {
+		return txtPorta;
+	}
+
+	public void setTxtPorta(JTextField txtPorta) {
+		this.txtPorta = txtPorta;
+	}
+
+	public JButton getBtnConnect() {
+		return btnConnect;
+	}
+
+	public void setBtnConnect(JButton btnConnect) {
+		this.btnConnect = btnConnect;
+	}
 }

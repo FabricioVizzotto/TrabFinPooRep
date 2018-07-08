@@ -33,7 +33,7 @@ public class SocketClient {
 		}
 	}
 	
-	public void createWriter(Socket cli){
+	public void createWriter(){
 		try {
 			pw = new PrintWriter(cli.getOutputStream());
 			
@@ -42,10 +42,10 @@ public class SocketClient {
 			e.printStackTrace();
 		}
 	}
-	public void sendData(String data,PrintWriter pw){
+	public void sendData(String data){
 		pw.write(data);
 	}
-	public void createReader(Socket cli){
+	public void createReader(){
 		try {
 			br = new BufferedReader(new InputStreamReader(cli.getInputStream()));
 		} catch (IOException e) {
@@ -53,7 +53,7 @@ public class SocketClient {
 			e.printStackTrace();
 		}
 	}
-	public String receiveData(BufferedReader br){
+	public String receiveData(){
 		String dados = null;
 		return dados;
 				
