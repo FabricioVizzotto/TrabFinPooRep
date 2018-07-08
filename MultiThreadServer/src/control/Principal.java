@@ -10,11 +10,15 @@ public class Principal {
 		String texto;
 		
 		sserv.createServerSocket(55555);
-		sserv.createReader();
-		sserv.createWriter();
-
+		
+		
+		System.out.println("Buscando conexão...");
 		while(true){
 			sserv.bindToClient();
+			System.out.println("Conectado");
+			
+			sserv.createReader();
+			sserv.createWriter();
 			
 			do {
 				texto = sserv.receiveData();
